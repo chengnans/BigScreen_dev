@@ -1,6 +1,6 @@
 <!--首页弹窗自定义-->
 <template>
-  <a href="/base_index">
+  <a href="/baseIndex">
   <div class="container" >
     <h1>大河岔村基地</h1>
     <p>面积：<span class="highlight">422.81亩 (28.19公顷)</span></p>
