@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <div class="layout-header">{{ appName }}</div>
+<!--    <div class="layout-header">{{ appName }}</div>-->
     <div class="layout-main">
     <Tmap></Tmap>
     </div>
