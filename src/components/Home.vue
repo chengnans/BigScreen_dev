@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+<!--    全局显示顶部标题，移至App.vue-->
 <!--    <div class="layout-header">{{ appName }}</div>-->
     <div class="layout-main">
     <Tmap></Tmap>

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+<!--    全局显示顶部标题-->
     <div class="layout-header">{{ appName }}</div>
     <router-view></router-view>
   </div>
