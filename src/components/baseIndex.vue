@@ -2,19 +2,20 @@
   <div class="base-list-container">
     <div class="header">
       <span class="arrow">&gt;&gt;&gt;&gt;&gt;</span>
-      <h1>基地列表（点击可快速导航）</h1>
+      <h2>基地列表</h2>
+      <h4>（点击可快速导航）</h4>
+      <button class="close-btn" @click="$emit('close')">关闭</button>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="请输入" />
-      <button>搜 索</button>
-      <button>重 置</button>
+      <input type="text" placeholder="请输入" v-model="searchTerm" />
+      <button @click="search">搜 索</button>
+      &nbsp;
+      <button @click="reset">重 置</button>
     </div>
-    <div class="base-item">
-      <div class="base-name">大河岔村基地</div>
+    <div class="base-item" v-for="base in bases" :key="base.name">
+      <div class="base-name">{{ base.name }}</div>
       <div class="base-details">
-        <div>种植：无</div>
-        <div>设备数量：44</div>
-        <div>面积：422.81亩</div>
+        <div>种植：{{ base.crops }}&emsp;&emsp;设备数量：{{ base.equipmentCount }}&emsp;&emsp;面积：{{ base.area }}亩</div>
       </div>
     </div>
   </div>
@@ -49,60 +50,63 @@ export default {
 
 <style scoped>
 .base-list-container {
-  padding: 20px;
-  color: white;
+  position: fixed; /* 固定位置，悬浮于地图之上 */
+  top: 80px;
+  left: 0px;
+  width: 400px;
+  height: 600px;
   background-color: #2c3e50;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.arrow {
-  margin-right: 10px;
-  font-size: 24px;
-  color: #2ecc71;
-}
-
-.search-bar {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.search-bar input {
-  width: calc(100% - 200px);
-  padding: 10px;
+  border-radius: 8px;
   color: white;
-  background-color: #34495e;
-  border: none;
-  outline: none;
-}
+  z-index: 9999; /* 确保高于地图 */
 
-.search-bar button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  color: white;
-  cursor: pointer;
-  background-color: #2ecc71;
-  border: none;
-}
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #34495e;
+    border-bottom: 1px solid #2ecc71;
+  }
 
-.base-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
+  .arrow {
+    font-size: 18px;
+    color: #2ecc71;
+  }
 
-.base-name {
-  font-size: 18px;
-  font-weight: bold;
-}
+  .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
 
-.base-details div {
-  margin-top: 5px;
+  .search-bar {
+    display: flex;
+    padding: 10px;
+  }
+
+  .search-bar input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #34495e;
+    background-color: #34495e;
+    color: white;
+  }
+
+  .search-bar button {
+    background-color: #64e8e7;
+    border: none;
+    color: black;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+
+  .base-item {
+    padding: 10px;
+    border-bottom: 1px solid #34495e;
+  }
 }
 </style>
