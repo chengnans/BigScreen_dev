@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
-    <AMap/>
     <Sidebar />
+    <AMap />
     <!-- 其他内容 -->
   </div>
 </template>
@@ -22,5 +22,13 @@ export default {
 .app-container {
   display: flex;
   height: 100vh;
+}
+
+.sidebar {
+  width: 80px; /* 确保侧边栏宽度 */
+}
+
+.map-container {
+  flex: 1; /* 使地图区域占据剩余空间 */
 }
 </style>
