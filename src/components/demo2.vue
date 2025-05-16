@@ -1,6 +1,8 @@
 <template>
   <div class="app-container">
     <demo />
+    <Calendar />
+    <PlantingPlan />
     <Sidebar />
     <AMap />
     <!-- 其他内容 -->
@@ -11,12 +13,16 @@
 import AMap from "./Maps/AMap.vue";
 import Sidebar from './Sidebar/Siderbar.vue';
 import demo from "./demo.vue";
+import Calendar from "./nsgl/Calendar.vue";
+import PlantingPlan from "./nsgl/PlantingPlan.vue";
 
 export default {
   components: {
+    PlantingPlan,
     AMap,
     Sidebar,
-    demo
+    demo,
+    Calendar
   },
 };
 </script>

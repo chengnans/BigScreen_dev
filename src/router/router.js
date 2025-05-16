@@ -5,6 +5,7 @@ import AMap from "../components/Maps/AMap.vue";
 import AMapdemo from "../components/Maps/AMapdemo.vue";
 import demo from "../components/demo.vue";
 import demo2 from "../components/demo2.vue";
+import Calendar from "../components/nsgl/Calendar.vue";
 
 const routes = [
     {
@@ -27,7 +28,7 @@ const routes = [
         name: 'AMap',
         component: AMap
     },
-        {
+    {
         path: '/demo',
         name: 'demo',
         component: demo
@@ -36,7 +37,12 @@ const routes = [
         path: '/demo2',
         name: 'demo2',
         component: demo2
-    }
+    },
+    {
+        path: '/Calendar',
+        name: 'Calendar',
+        component: Calendar
+    },
 ]
 
 const router = createRouter({

@@ -1,89 +1,89 @@
 <template>
   <div class="monitor">
-  <div class="soil-monitor">
-    <!-- Header -->
-    <div class="header">
-      <span class="label">土壤监测</span>
-      <button class="close-btn" @click="close">×</button>
-    </div>
-
-    <!-- Experiment Selection -->
-    <div class="experiment-section">
-      <label for="experimentPeriod">实验地 (休耕/休眠期)</label>
-      <select id="experimentPeriod" v-model="experimentPeriod" class="dropdown">
-        <option value="休耕">休耕</option>
-        <option value="休眠期">休眠期</option>
-      </select>
-      <span class="details-btn" @click="toggleDetails">潜区详情</span>
-    </div>
-
-    <!-- Basic Data -->
-    <div class="basic-data">
-      <div class="data-item">
-        <span class="data-label">土壤类型</span>
-        <span class="data-value">{{ soilType }}</span>
-      </div>
-      <div class="data-item">
-        <span class="data-label">土壤容量</span>
-        <span class="data-value">{{ soilVolume }}</span>
-      </div>
-    </div>
-
-    <!-- Live Data Table -->
-    <div class="live-data">
-      <div class="sensor-info">
-        <img src="https://ts1.tc.mm.bing.net/th/id/R-C.3788497f64eeedf38a4f016511c42fb6?rik=1ApM1v%2fv%2fhlS9A&riu=http%3a%2f%2ficon.chrafz.com%2fuploads%2fallimg%2f160919%2f1-1609191A3380-L.png&ehk=KtuaDMFbY29WzPwmvP72IokO%2bUcfXFwi%2bIQbI2Qh57g%3d&risl=&pid=ImgRaw&r=0" alt="sensor icon" class="sensor-icon" />
-        <span class="sensor-id">{{ sensorId }}</span>
+    <div class="soil-monitor">
+      <!-- Header -->
+      <div class="header">
+        <span class="label">土壤监测</span>
+        <button class="close-btn" @click="close">×</button>
       </div>
 
-      <!-- Data table for Depth, Moisture, EC, and Temperature -->
-      <div class="data-table">
-        <div class="data-row">
-          <span class="data-depth">深度 (cm)</span>
-          <span class="data-value">10</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
+      <!-- Experiment Selection -->
+      <div class="experiment-section">
+        <label for="experimentPeriod">实验地 (休耕/休眠期)</label>
+        <select id="experimentPeriod" v-model="experimentPeriod" class="dropdown">
+          <option value="休耕">休耕</option>
+          <option value="休眠期">休眠期</option>
+        </select>
+        <span class="details-btn" @click="toggleDetails">潜区详情</span>
+      </div>
+
+      <!-- Basic Data -->
+      <div class="basic-data">
+        <div class="data-item">
+          <span class="data-label">土壤类型</span>
+          <span class="data-value">{{ soilType }}</span>
         </div>
-        <div class="data-row">
-          <span class="data-depth">20</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-        </div>
-        <div class="data-row">
-          <span class="data-depth">30</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-        </div>
-        <div class="data-row">
-          <span class="data-depth">40</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-        </div>
-        <div class="data-row">
-          <span class="data-depth">50</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-        </div>
-        <div class="data-row">
-          <span class="data-depth">60</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
-          <span class="data-value">--</span>
+        <div class="data-item">
+          <span class="data-label">土壤容量</span>
+          <span class="data-value">{{ soilVolume }}</span>
         </div>
       </div>
-    </div>
 
-    <!-- Update Time -->
-    <div class="update-time">
-      <span>数据更新时间：</span>
-      <span>{{ updateTime }}</span>
+      <!-- Live Data Table -->
+      <div class="live-data">
+        <div class="sensor-info">
+          <img src="https://ts1.tc.mm.bing.net/th/id/R-C.3788497f64eeedf38a4f016511c42fb6?rik=1ApM1v%2fv%2fhlS9A&riu=http%3a%2f%2ficon.chrafz.com%2fuploads%2fallimg%2f160919%2f1-1609191A3380-L.png&ehk=KtuaDMFbY29WzPwmvP72IokO%2bUcfXFwi%2bIQbI2Qh57g%3d&risl=&pid=ImgRaw&r=0" alt="sensor icon" class="sensor-icon" />
+          <span class="sensor-id">{{ sensorId }}</span>
+        </div>
+
+        <!-- Data table for Depth, Moisture, EC, and Temperature -->
+        <div class="data-table">
+          <div class="data-row">
+            <span class="data-depth">深度 (cm)</span>
+            <span class="data-value">10</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+          </div>
+          <div class="data-row">
+            <span class="data-depth">20</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+          </div>
+          <div class="data-row">
+            <span class="data-depth">30</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+          </div>
+          <div class="data-row">
+            <span class="data-depth">40</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+          </div>
+          <div class="data-row">
+            <span class="data-depth">50</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+          </div>
+          <div class="data-row">
+            <span class="data-depth">60</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+            <span class="data-value">--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Update Time -->
+      <div class="update-time">
+        <span>数据更新时间：</span>
+        <span>{{ updateTime }}</span>
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
