@@ -6,6 +6,7 @@ import AMapdemo from "../components/Maps/AMapdemo.vue";
 import demo from "../components/demo.vue";
 import demo2 from "../components/demo2.vue";
 import nsgl from "../components/nsgl/nsgl.vue";
+import gggl from "../components/gggl/gggl.vue";
 
 const routes = [
     {
@@ -42,6 +43,11 @@ const routes = [
         path: '/nsgl',
         name: 'nsgl',
         component: nsgl
+    },
+    {
+        path: '/gggl',
+        name: 'gggl',
+        component: gggl
     },
 ]
 

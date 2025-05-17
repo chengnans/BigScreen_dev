@@ -1,8 +1,8 @@
-<!--农事管理-->
+<!--灌溉管理-->
 <template>
   <div class="app-container">
-    <Calendar />
-    <PlantingPlan />
+    <IrrigationManage />
+    <IrrigationRecord />
     <Sidebar />
     <AMap />
   </div>
@@ -11,15 +11,15 @@
 <script>
 import AMap from "../Maps/AMap.vue";
 import Sidebar from '../Sidebar/Siderbar.vue';
-import Calendar from "./Calendar.vue";
-import PlantingPlan from "./PlantingPlan.vue";
+import IrrigationManage from "./IrrigationManage.vue";
+import IrrigationRecord from "./IrrigationRecord.vue";
 
 export default {
   components: {
-    PlantingPlan,
     AMap,
     Sidebar,
-    Calendar
+    IrrigationManage,
+    IrrigationRecord
   },
 };
 </script>
