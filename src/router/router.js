@@ -5,7 +5,7 @@ import AMap from "../components/Maps/AMap.vue";
 import AMapdemo from "../components/Maps/AMapdemo.vue";
 import demo from "../components/demo.vue";
 import demo2 from "../components/demo2.vue";
-import Calendar from "../components/nsgl/Calendar.vue";
+import nsgl from "../components/nsgl/nsgl.vue";
 
 const routes = [
     {
@@ -39,9 +39,9 @@ const routes = [
         component: demo2
     },
     {
-        path: '/Calendar',
-        name: 'Calendar',
-        component: Calendar
+        path: '/nsgl',
+        name: 'nsgl',
+        component: nsgl
     },
 ]
 
