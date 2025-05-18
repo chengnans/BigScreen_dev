@@ -28,10 +28,16 @@
 
       <div class="section-box">
         <h2 class="section-title">🔷 土壤含水量各层次数据</h2>
-        <div class="grid grid-cols-2 gap-2 mt-2 text-xs">
-          <div v-for="(item, index) in soilData" :key="index" class="flex justify-between">
-            <span>{{ item.depth }}</span>
-            <span>{{ item.value }}% <span class="text-cyan-300">↑</span></span>
+        <div  class="device-flex" style="display: flex">
+          <!-- 图片 -->
+          <img src="./device.png" style="height: 150px;" />
+
+          <!-- 数据区域作为一个整体 -->
+          <div class="space-y-1">
+            <div v-for="(item, index) in soilData" :key="index" class="flex justify-between">
+              <span>{{ item.depth }}</span>
+              <span>{{ item.value }}% <span class="text-cyan-300">↑</span></span>
+            </div>
           </div>
         </div>
       </div>

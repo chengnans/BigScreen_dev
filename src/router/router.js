@@ -7,6 +7,7 @@ import demo from "../components/demo.vue";
 import demo2 from "../components/demo2.vue";
 import nsgl from "../components/nsgl/nsgl.vue";
 import gggl from "../components/gggl/gggl.vue";
+import sfgl from "../components/sfgl/sfgl.vue";
 
 const routes = [
     {
@@ -48,6 +49,11 @@ const routes = [
         path: '/gggl',
         name: 'gggl',
         component: gggl
+    },
+    {
+        path: '/sfgl',
+        name: 'sfgl',
+        component: sfgl
     },
 ]
 
