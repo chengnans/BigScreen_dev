@@ -24,9 +24,9 @@ export default {
       showFarmingDialog: false,
       showIrrigationDialog: false,
       menuItems: [
-        { id: 1, text: '农事管理', icon: 'src/components/Sidebar/icon1.png' },
-        { id: 2, text: '灌溉管理', icon: 'src/components/Sidebar/icon2.png' },
-        { id: 3, text: '施肥管理', icon: 'src/components/Sidebar/icon3.png' },
+        { id: 1, text: '农事管理', icon: 'src/components/Sidebar/icon1.png', route: '/nsgl'},
+        { id: 2, text: '灌溉管理', icon: 'src/components/Sidebar/icon2.png', route: '/gggl'},
+        { id: 3, text: '施肥管理', icon: 'src/components/Sidebar/icon3.png', route: '/sfgl'},
         { id: 4, text: '小气候监测', icon: 'src/components/Sidebar/icon4.png' },
         { id: 5, text: '基地管理', icon: 'src/components/Sidebar/icon5.png' },
         { id: 6, text: '土壤监测', icon: 'src/components/Sidebar/icon6.png' },
@@ -40,12 +40,19 @@ export default {
   },
   methods: {
     handleMenuClick(id) {
-      if (id === 1) {
-        this.showFarmingDialog = true
-      } else if (id === 2) {
-        this.showIrrigationDialog = true
+      // if (id === 1) {
+      //   this.showFarmingDialog = true
+      // } else if (id === 2) {
+      //   this.showIrrigationDialog = true
+      // }
+      // // 后续可以添加其他菜单项的处理逻辑
+
+
+      // router 跳转实现
+      const item = this.menuItems.find(item => item.id === id)
+      if (item && item.route) {
+        this.$router.push(item.route)
       }
-      // 后续可以添加其他菜单项的处理逻辑
     }
   }
 }
