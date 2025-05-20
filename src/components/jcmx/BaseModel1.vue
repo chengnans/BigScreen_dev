@@ -184,7 +184,7 @@ export default {
 
   position: fixed; /* 或者使用 absolute */
   bottom: 0px;
-  right: 3px;
+  left: 80px;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   //padding: 20px;
