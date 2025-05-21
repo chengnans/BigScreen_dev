@@ -32,7 +32,7 @@ export default {
         { id: 6, text: '土壤监测', icon: 'src/components/Sidebar/icon6.png', route: '/trjc'},
         { id: 7, text: '生育期管理', icon: 'src/components/Sidebar/icon7.png', route: '/syqgl'},
         { id: 8, text: '病虫害监测', icon: 'src/components/Sidebar/icon8.png', route: '/bchjc'},
-        { id: 9, text: '灾害预警', icon: 'src/components/Sidebar/icon3.png' },
+        { id: 9, text: '灾害预警', icon: 'src/components/Sidebar/icon3.png', route: '/zhyj'},
         { id: 10, text: '产品与品质预测', icon: 'src/components/Sidebar/icon9.png' },
         { id: 11, text: '溯源档案', icon: 'src/components/Sidebar/icon3.png' }
       ]
