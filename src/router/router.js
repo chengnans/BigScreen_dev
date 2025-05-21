@@ -15,6 +15,7 @@ import syqgl from "../components/syqgl/syqgl.vue";
 import bchjc from "../components/bchjc/bchjc.vue";
 import zhyj from "../components/zhyj/zhyj.vue";
 import pzyc from "../components/clypzyc/pzyc.vue";
+import syda from "../components/syda/syda.vue";
 
 const routes = [
     {
@@ -96,6 +97,11 @@ const routes = [
         path: '/pzyc',
         name: 'pzyc',
         component: pzyc
+    },
+    {
+        path: '/syda',
+        name: 'syda',
+        component: syda
     },
 ]
 
