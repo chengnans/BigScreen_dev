@@ -29,7 +29,7 @@ export default {
         { id: 3, text: '施肥管理', icon: 'src/components/Sidebar/icon3.png', route: '/sfgl'},
         { id: 4, text: '小气候监测', icon: 'src/components/Sidebar/icon4.png', route: '/xqhjc'},
         { id: 5, text: '基础管理', icon: 'src/components/Sidebar/icon5.png', route: '/jcmx'},
-        { id: 6, text: '土壤监测', icon: 'src/components/Sidebar/icon6.png' },
+        { id: 6, text: '土壤监测', icon: 'src/components/Sidebar/icon6.png', route: '/trjc'},
         { id: 7, text: '生育期管理', icon: 'src/components/Sidebar/icon7.png' },
         { id: 8, text: '病虫害监测', icon: 'src/components/Sidebar/icon8.png' },
         { id: 9, text: '灾害预警', icon: 'src/components/Sidebar/icon3.png' },

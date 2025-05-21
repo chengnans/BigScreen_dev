@@ -10,6 +10,7 @@ import gggl from "../components/gggl/gggl.vue";
 import sfgl from "../components/sfgl/sfgl.vue";
 import xqhjc from "../components/xqhjc/xqhjc.vue";
 import jcmx from "../components/jcmx/jcmx.vue";
+import trjc from "../components/trjc/trjc.vue";
 
 const routes = [
     {
@@ -66,6 +67,11 @@ const routes = [
         path: '/jcmx',
         name: 'jcmx',
         component: jcmx
+    },
+    {
+        path: '/trjc',
+        name: 'trjc',
+        component: trjc
     },
 ]
 
