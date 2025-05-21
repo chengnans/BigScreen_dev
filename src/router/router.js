@@ -14,6 +14,7 @@ import trjc from "../components/trjc/trjc.vue";
 import syqgl from "../components/syqgl/syqgl.vue";
 import bchjc from "../components/bchjc/bchjc.vue";
 import zhyj from "../components/zhyj/zhyj.vue";
+import pzyc from "../components/clypzyc/pzyc.vue";
 
 const routes = [
     {
@@ -90,6 +91,11 @@ const routes = [
         path: '/zhyj',
         name: 'zhyj',
         component: zhyj
+    },
+    {
+        path: '/pzyc',
+        name: 'pzyc',
+        component: pzyc
     },
 ]
 
