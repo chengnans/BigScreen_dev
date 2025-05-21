@@ -12,6 +12,7 @@ import xqhjc from "../components/xqhjc/xqhjc.vue";
 import jcmx from "../components/jcmx/jcmx.vue";
 import trjc from "../components/trjc/trjc.vue";
 import syqgl from "../components/syqgl/syqgl.vue";
+import bchjc from "../components/bchjc/bchjc.vue";
 
 const routes = [
     {
@@ -78,6 +79,11 @@ const routes = [
         path: '/syqgl',
         name: 'syqgl',
         component: syqgl
+    },
+    {
+        path: '/bchjc',
+        name: 'bchjc',
+        component: bchjc
     },
 ]
 
