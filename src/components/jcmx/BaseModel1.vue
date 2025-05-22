@@ -8,6 +8,7 @@
     <div class="dropdown-container">
       <select v-model="selectedArea">
         <option>实验地(休耕/休眠期)</option>
+        <option>对照地(休耕/休眠期)</option>
       </select>
       <button class="area-detail">灌区详情</button>
     </div>
