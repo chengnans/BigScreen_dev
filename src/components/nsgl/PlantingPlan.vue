@@ -15,10 +15,11 @@
         <div class="step">生成全年农事计划</div>
         <div class="step">完成</div>
       </div>
-      <div class="info">您当前基地暂无未设置种植作物信息</div>
+      <div class="info">{{ MainAdvice }}</div>
     </section>
 
-    <section class="recommended-plan">
+
+    <!-- <section class="recommended-plan">
       <h3>我们猜测您需要以下方案</h3>
       <div class="plan">
         <div class="plan-title">青岛夏玉米高产创建技术方案</div>
@@ -30,8 +31,15 @@
         <div class="plan-yield">--kg/亩</div>
         <button class="custom-btn">定制</button>
       </div>
+    </section> -->
+    <section class="recommended-plan">
+      <h3>我们猜测您需要以下方案</h3>
+      <div class="plan" v-for="plan in RecommendedPlans" :key="plan.title">
+        <div class="plan-title">{{ plan.title }}</div>
+        <div class="plan-yield">{{ plan.yield }}</div>
+        <button class="custom-btn">定制</button>
+      </div>
     </section>
-
     <section class="plan-records">
       <h3>种植方案生成记录</h3>
       <table class="record-table">
@@ -45,7 +53,17 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+          <tr v-for="item in PlanRecord" :key="item.name">
+          <td>{{ item.generateTime }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.sowTime }}</td>
+          <td>{{ item.yield }}</td>
+          <td>
+            <span class="icon">{{ item.icon1 }}</span>
+            <span class="icon">{{ item.icon2 }}</span>
+          </td>
+        </tr>
+        <!-- <tr>
           <td>2024/10/09</td>
           <td>夏玉米</td>
           <td>06月13日</td>
@@ -54,7 +72,7 @@
             <span class="icon">🔍</span>
             <span class="icon">📥</span>
           </td>
-        </tr>
+        </tr> -->
         </tbody>
       </table>
       <div class="pagination">
@@ -66,10 +84,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'PlantingPlanComponent'
-};
+<script setup>
+import { ref } from 'vue'
+
+const MainAdvice = '您当前基地暂无未设置种植作物信息'
+const PlanRecord = ref([
+  { generateTime: '2024/10/09',name: '夏玉米', sowTime: '06月13日', yield: '800kg/亩', icon1: '🔍', icon2: '📥'},
+])
+const RecommendedPlans = ref([
+  { title: '青岛夏玉米高产创建技术方案', yield: '800kg/亩' },
+  { title: '青岛冬小麦种植方案', yield: '--kg/亩' }
+])
 </script>
 
 <style scoped>
