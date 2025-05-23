@@ -62,7 +62,7 @@ const monitoringEntries = ref([
   {
     id: 1,
     timestamp: '2025-05-21 00:20:43',
-    imageUrl: 'https://agriculture.cos.clife.cn/public/web/1/1//abf0b5f26da742968afa715ba1775595.jpg?sign=ePKlhMq%2FyG2wVKV9EfcR1iXuZR9hPTEzMjMxMTY5MTImYj1hZ3JpY3VsdHVyZSZrPUFLSURxZ1hjWlZUVm5KdzZHTVJVY0FmOXZjUURBM3BjVVNKNCZlPTE3NDc4MzIzMDImdD0xNzQ3ODI1MTAyJnI9OTg2MTc4NDAwJmY9LzEzMjMxMTY5MTIvYWdyaWN1bHR1cmUv', // Placeholder
+    imageUrl: 'pest.png', // Placeholder
     recognitionType: '害虫',
     source: '虫情测报灯',
     recognitionResult: '未发现病虫害',
@@ -70,7 +70,7 @@ const monitoringEntries = ref([
   {
     id: 2,
     timestamp: '2025-05-20 23:56:59',
-    imageUrl: 'https://agriculture.cos.clife.cn/public/web/1/1//abf0b5f26da742968afa715ba1775595.jpg?sign=ePKlhMq%2FyG2wVKV9EfcR1iXuZR9hPTEzMjMxMTY5MTImYj1hZ3JpY3VsdHVyZSZrPUFLSURxZ1hjWlZUVm5KdzZHTVJVY0FmOXZjUURBM3BjVVNKNCZlPTE3NDc4MzIzMDImdD0xNzQ3ODI1MTAyJnI9OTg2MTc4NDAwJmY9LzEzMjMxMTY5MTIvYWdyaWN1bHR1cmUv', // Placeholder
+    imageUrl: 'pest.png', // Placeholder
     recognitionType: '害虫',
     source: '虫情测报灯',
     recognitionResult: '未发现病虫害',
@@ -78,7 +78,7 @@ const monitoringEntries = ref([
   {
     id: 3,
     timestamp: '2025-05-20 22:15:30',
-    imageUrl: 'https://agriculture.cos.clife.cn/public/web/1/1//abf0b5f26da742968afa715ba1775595.jpg?sign=ePKlhMq%2FyG2wVKV9EfcR1iXuZR9hPTEzMjMxMTY5MTImYj1hZ3JpY3VsdHVyZSZrPUFLSURxZ1hjWlZUVm5KdzZHTVJVY0FmOXZjUURBM3BjVVNKNCZlPTE3NDc4MzIzMDImdD0xNzQ3ODI1MTAyJnI9OTg2MTc4NDAwJmY9LzEzMjMxMTY5MTIvYWdyaWN1bHR1cmUv', // Placeholder
+    imageUrl: 'pest.png', // Placeholder
     recognitionType: '病害',
     source: '高清摄像头',
     recognitionResult: '疑似叶斑病',
@@ -87,7 +87,7 @@ const monitoringEntries = ref([
   {
     id: 4,
     timestamp: '2025-05-20 21:05:00',
-    imageUrl: 'https://agriculture.cos.clife.cn/public/web/1/1//abf0b5f26da742968afa715ba1775595.jpg?sign=ePKlhMq%2FyG2wVKV9EfcR1iXuZR9hPTEzMjMxMTY5MTImYj1hZ3JpY3VsdHVyZSZrPUFLSURxZ1hjWlZUVm5KdzZHTVJVY0FmOXZjUURBM3BjVVNKNCZlPTE3NDc4MzIzMDImdD0xNzQ3ODI1MTAyJnI9OTg2MTc4NDAwJmY9LzEzMjMxMTY5MTIvYWdyaWN1bHR1cmUv', // Placeholder
+    imageUrl: 'pest.png', // Placeholder
     recognitionType: '害虫',
     source: '虫情测报灯',
     recognitionResult: '发现蚜虫 3 只',
