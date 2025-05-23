@@ -58,12 +58,82 @@ export default {
 }
 </script>
 
+<!--<style scoped>-->
+<!--.sidebar {-->
+<!--  width: 80px;-->
+<!--  height: 100vh;-->
+<!--  background-color: rgb(15, 45, 62);-->
+<!--  overflow: hidden;-->
+<!--}-->
+
+<!--.menu-list {-->
+<!--  height: 100%;-->
+<!--  padding: 60px 0 20px;-->
+<!--  overflow-y: auto;-->
+<!--}-->
+
+<!--.menu-item {-->
+<!--  display: flex;-->
+<!--  flex-direction: column;-->
+<!--  align-items: center;-->
+<!--  padding: 10px 0;-->
+<!--  cursor: pointer;-->
+<!--}-->
+
+<!--.menu-icon {-->
+<!--  width: 24px;-->
+<!--  height: 24px;-->
+<!--  margin-bottom: 6px;-->
+<!--}-->
+
+<!--.menu-icon img {-->
+<!--  width: 100%;-->
+<!--  height: 100%;-->
+<!--  filter: brightness(0) invert(0.7);-->
+<!--}-->
+
+<!--.menu-text {-->
+<!--  font-size: 12px;-->
+<!--  color: rgba(255, 255, 255, 0.7);-->
+<!--  text-align: center;-->
+<!--}-->
+
+<!--.menu-item:hover {-->
+<!--  background-color: rgba(0, 255, 255, 0.1);-->
+<!--}-->
+
+<!--.menu-item:hover .menu-icon img {-->
+<!--  filter: brightness(0) invert(1);-->
+<!--}-->
+
+<!--.menu-item:hover .menu-text {-->
+<!--  color: #fff;-->
+<!--}-->
+
+<!--/* 自定义滚动条样式 */-->
+<!--.menu-list::-webkit-scrollbar {-->
+<!--  width: 4px;-->
+<!--}-->
+
+<!--.menu-list::-webkit-scrollbar-thumb {-->
+<!--  background: rgba(255, 255, 255, 0.2);-->
+<!--  border-radius: 2px;-->
+<!--}-->
+
+<!--.menu-list::-webkit-scrollbar-track {-->
+<!--  background: transparent;-->
+<!--}-->
+<!--</style>-->
 <style scoped>
 .sidebar {
-  width: 80px;
-  height: 100vh;
+  position: fixed; /* 固定侧边栏位置 */
+  left: 0;
+  top: 0;
+  height: 100vh; /* 全屏高度 */
+  width: 80px; /* 默认宽度 */
   background-color: rgb(15, 45, 62);
   overflow: hidden;
+  z-index: 1000; /* 确保侧边栏在最前面 */
 }
 
 .menu-list {
@@ -122,5 +192,12 @@ export default {
 
 .menu-list::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* 主内容区预留空间 */
+.main-content {
+  margin-left: 80px; /* 避让侧边栏宽度 */
+  padding: 20px;
+  box-sizing: border-box; /* 确保padding不会影响整体宽度 */
 }
 </style>

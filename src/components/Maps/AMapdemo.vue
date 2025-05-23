@@ -23,10 +23,11 @@ export default {
   display: flex;
   height: 100vh;
 }
-
+/* 侧边栏优化布局，暂不需要此处
 .sidebar {
-  width: 80px; /* 确保侧边栏宽度 */
+  width: 80px;
 }
+*/
 
 .map-container {
   flex: 1; /* 使地图区域占据剩余空间 */
