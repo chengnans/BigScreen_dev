@@ -82,10 +82,10 @@ export default {
   background: #01232f;
   color: #c8f7ff;
   border-radius: 10px;
-  width: 280px;
+  width: 20vw;
   position: fixed;
-  bottom: 60px;
-  left: 80px;
+  //bottom: 5vh;
+  left: 5vw;
   padding: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   z-index: 1000;

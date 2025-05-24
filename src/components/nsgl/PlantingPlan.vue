@@ -104,11 +104,11 @@ const RecommendedPlans = ref([
   padding: 16px;
   font-family: sans-serif;
   border-radius: 8px;
-  width: 350px;
+  width: 25vw;
 
   position: fixed;
-  bottom: 50px;
-  right: 3px;
+  //bottom: 8vh;
+  right: 0.2vw;
   z-index: 1000; /* 确保它位于其他内容之上 */
 }
 .header {

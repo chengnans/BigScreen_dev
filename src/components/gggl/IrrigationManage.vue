@@ -120,10 +120,10 @@ export default {
 
 <style scoped>
 .IrrigationManage {
-  width: 360px;
+  width: 25vw;
   position: fixed;
-  bottom: 30px;
-  left: 60px;
+  bottom: 2vh;
+  left: 5vw;
   background: linear-gradient(to bottom, #00666f, #004d4d);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

@@ -102,8 +102,8 @@ export default {
 
 
   position: fixed;
-  bottom: 120px;
-  left: 80px;
+  //bottom: 25vh;
+  left: 5vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   padding: 20px;

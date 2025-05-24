@@ -58,8 +58,8 @@ const rainForecast = [
 /* 可加入额外样式，如果不使用 Tailwind */
 .IrrigationRecord {
   position: fixed;
-  bottom: 5px;
-  right: 10px;
+  bottom: 1vh;
+  right: 0.2vw;
   background: linear-gradient(to bottom, #00666f, #004d4d);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
