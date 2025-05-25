@@ -28,8 +28,8 @@
   box-sizing: border-box;
 
   position: fixed; /* 或者使用 absolute */
-  bottom: 50px;
-  right: 3px;
+  //bottom: 50px;
+  right: 0.2vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   padding: 20px;

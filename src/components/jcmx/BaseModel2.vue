@@ -110,7 +110,7 @@ export default {
 
   position: fixed; /* 或者使用 absolute */
   //bottom: 120px;
-  right: 8px;
+  right: 0.2vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   //padding: 20px;

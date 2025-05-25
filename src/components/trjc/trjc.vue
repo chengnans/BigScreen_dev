@@ -29,6 +29,9 @@ export default {
 .app-container {
   display: flex;
   height: 100vh;
+  flex-direction: column; /* 将主轴方向设置为垂直 */
+  justify-content: center; /* 主轴上的居中 */
+  align-items: center; /* 交叉轴上的居中 */
 }
 
 .sidebar {

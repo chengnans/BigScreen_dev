@@ -171,8 +171,8 @@ body { /* 这个可以移除，因为SFC通常嵌入到更大的应用中 */
   margin: 20px auto; /* For centering if used standalone on a page */
 
   position: fixed; /* 或者使用 absolute */
-  bottom: 10px;
-  right: 3px;
+  //bottom: 10px;
+  right: 0.2vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   //padding: 20px;

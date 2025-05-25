@@ -109,8 +109,8 @@ const monitoringEntries = ref([
   border: 1px solid #1c2f3e; /* Outer border */
 
   position: fixed; /* 或者使用 absolute */
-  bottom: 100px;
-  left: 80px;
+  //bottom: 100px;
+  left: 5vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   //padding: 20px;

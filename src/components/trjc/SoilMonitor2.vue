@@ -89,8 +89,8 @@ const heavyMetalAdvice = '补充钾（氧化钾）11公斤/亩，硫肥2.3公斤
   width: 360px;
 
   position: fixed; /* 或者使用 absolute */
-  bottom: 50px;
-  right: 3px;
+  //bottom: 50px;
+  right: 0.2vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);

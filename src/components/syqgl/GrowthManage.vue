@@ -405,8 +405,8 @@ const periodEffectiveTemp = ref('0.00°C·D');
   overflow: hidden; /* Ensures child borders don't poke out if container has radius */
 
   position: fixed; /* 或者使用 absolute */
-  bottom: 20px;
-  left: 80px;
+  //bottom: 20px;
+  left: 5vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   padding: 20px;

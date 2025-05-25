@@ -57,8 +57,8 @@ const growthStages = ref([
   //position: relative; /* For the main timeline bar */
 
   position: fixed; /* 或者使用 absolute */
-  bottom: 100px;
-  right: 3px;
+  //bottom: 100px;
+  right: 0.2vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   padding: 20px;

@@ -202,8 +202,8 @@ const allDisasters = ref([
   overflow: hidden;
 
   position: fixed; /* 或者使用 absolute */
-  bottom: 150px;
-  left: 80px;
+  //bottom: 150px;
+  left: 5vw;
   //background-color: rgba(0, 0, 0, 0);
   //border: 1px solid #d3d3d3;
   //padding: 20px;

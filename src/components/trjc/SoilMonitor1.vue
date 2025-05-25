@@ -90,8 +90,8 @@ const updateTime = '2025-05-21 18:19:33'
   font-size: 14px;
   border-radius: 8px;
   position: fixed;
-  left: 80px;
-  bottom: 100px;
+  left: 5vw;
+  //bottom: 100px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
