@@ -1,8 +1,8 @@
 <template>
   <div class="model-container">
     <div class="header">
-      <h1>基础模型</h1>
-      <button class="close-btn">X</button>
+      <h3>基础模型</h3>
+<!--      <button class="close-btn">X</button>-->
     </div>
 
     <div class="dropdown-container">
@@ -21,9 +21,19 @@
 
       <div class="gauge">
         <div ref="lightChart" class="chart"></div>
-        <div class="sub-label">光补偿点<br />10000Lux</div>
+        <!-- 添加 Donut Labels -->
+        <div class="donut-labels">
+          <div
+              v-for="(segment, index) in averageSoilMoisture.segments"
+              :key="index"
+              class="donut-label"
+              :style="getDonutLabelPosition(index)"
+          >
+            <span class="label-text">{{ segment.label }}</span>
+            <span class="label-value">{{ segment.threshold }}</span>
+          </div>
+        </div>
       </div>
-
       <div class="info">有效日照时数：--小时</div>
     </div>
 
@@ -35,7 +45,18 @@
 
       <div class="gauge">
         <div ref="tempChart" class="chart"></div>
-        <div class="sub-label">低<br />15°C</div>
+        <!-- 添加 Donut Labels -->
+        <div class="donut-labels">
+          <div
+              v-for="(segment, index) in averageSoilMoisture.segments"
+              :key="index"
+              class="donut-label"
+              :style="getDonutLabelPosition(index)"
+          >
+            <span class="label-text">{{ segment.label }}</span>
+            <span class="label-value">{{ segment.threshold }}</span>
+          </div>
+        </div>
       </div>
 
       <div class="temperature-info">
@@ -61,6 +82,16 @@ export default {
       selectedArea: '实验地(休耕/休眠期)',
       lightValue: 45000,
       tempValue: 28,
+      // 添加 Donut Labels 数据
+      averageSoilMoisture: {
+        value: 37.5,
+        segments: [
+          { label: '萎蔫点', threshold: '10%', color: '#D3605C', percentage: 12, angleOffset: 135 }, // Reddish - approx visual size
+          { label: '灌溉下限', threshold: '15%', color: '#E8A43F', percentage: 18, angleOffset: 180 }, // Yellowish
+          { label: '灌溉上限', threshold: '25%', color: '#5DA5DA', percentage: 35, angleOffset: 245 }, // Blueish
+          { label: '饱和持水量', threshold: '30%', color: '#8B5FBF', percentage: 35, angleOffset: 30 }  // Purplish
+        ]
+      }
     };
   },
   mounted() {
@@ -91,17 +122,15 @@ export default {
                 ],
               },
             },
+            // 去掉刻度和分割线
+            axisTick: {
+              show: false
+            },
+            splitLine: {
+              show: false
+            },
             axisLabel: {
-              distance: 25,
-              color: '#fff',
-              fontSize: 10,
-              formatter: function (value) {
-                if (value === 10000) return '光补偿点';
-                if (value === 20000) return '偏低';
-                if (value === 90000) return '光饱和点';
-                if (value === 100000) return '高';
-                return '';
-              },
+              show: false
             },
             pointer: {
               width: 5,
@@ -113,7 +142,7 @@ export default {
               color: '#fff',
               formatter: '{value}Lux',
             },
-            data: [{ value: this.lightValue }],
+            data: [{value: this.lightValue}],
           },
         ],
       });
@@ -141,17 +170,15 @@ export default {
                 ],
               },
             },
+            // 去掉刻度和分割线
+            axisTick: {
+              show: false
+            },
+            splitLine: {
+              show: false
+            },
             axisLabel: {
-              distance: 25,
-              color: '#fff',
-              fontSize: 10,
-              formatter: function (value) {
-                if (value === 15) return '低';
-                if (value === 25) return '偏低';
-                if (value === 30) return '偏高';
-                if (value === 35) return '高';
-                return '';
-              },
+              show: false
             },
             pointer: {
               width: 5,
@@ -163,12 +190,30 @@ export default {
               color: '#fff',
               formatter: '{value}°C',
             },
-            data: [{ value: this.tempValue }],
+            data: [{value: this.tempValue}],
           },
         ],
       });
     },
-  },
+    // 添加 Donut Labels 的位置计算方法
+    getDonutLabelPosition(index) {
+      const segment = this.averageSoilMoisture.segments[index];
+      const angleRad = (segment.angleOffset - 90) * (Math.PI / 180); // Angle for positioning
+      const radius = 100; // Outer radius for labels in pixels
+
+      // These are offsets from the center of the donut chart area.
+      // The label box itself has dimensions, so these might need adjustment.
+      // Using percentages for top/left relative to the container.
+      // These are hand-tuned values based on the image.
+      const positions = [
+        { top: '70%', left: '15%', textAlign: 'right'},   // 萎蔫点 (bottom-left)
+        { top: '90%', left: '80%', textAlign: 'right'},  // 灌溉下限 (left)
+        { top: '0%', left: '20%', textAlign: 'left'},   // 灌溉上限 (top-leftish)
+        { top: '35%', left: '85%', textAlign: 'left'}    // 饱和持水量 (right)
+      ];
+      return positions[index];
+    }
+  }
 };
 </script>
 
@@ -182,13 +227,8 @@ export default {
   width: 100%;
   max-width: 400px;
 
-
   position: fixed; /* 或者使用 absolute */
-  //bottom: 0px;
   left: 5vw;
-  //background-color: rgba(0, 0, 0, 0);
-  //border: 1px solid #d3d3d3;
-  //padding: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   z-index: 1000; /* 确保它位于其他内容之上 */
 }
@@ -263,5 +303,30 @@ export default {
   text-align: center;
   margin-top: 0.5rem;
   font-size: 0.85rem;
+}
+
+/* 添加 Donut Labels 的样式 */
+.donut-labels {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* This container helps in positioning labels relative to the donut chart area's center */
+}
+
+.donut-label {
+  position: absolute;
+  font-size: 11px;
+  color: #A0D8F0;
+  transform: translate(-50%, -50%); /* Adjust for centering based on text anchor */
+  background-color: rgba(13, 42, 58, 0.7); /* Slight background for readability */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.donut-label .label-text {
+  display: block;
+}
+.donut-label .label-value {
+  display: block;
+  font-weight: bold;
+  color: #E0F8FF;
 }
 </style>
