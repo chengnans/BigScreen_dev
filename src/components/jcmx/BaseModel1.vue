@@ -1,7 +1,9 @@
 <template>
   <div class="model-container">
     <div class="header">
-      <h3>基础模型</h3>
+      <img src="../gggl/icon.png" class="header-icon" />
+      <span>土壤监测</span>
+      <i class="el-icon-close close-btn"></i>
 <!--      <button class="close-btn">X</button>-->
     </div>
 
@@ -24,17 +26,17 @@
         <!-- 添加 Donut Labels -->
         <div class="donut-labels">
           <div
-              v-for="(segment, index) in averageSoilMoisture.segments"
+              v-for="(segment, index) in lightLabel.segments"
               :key="index"
               class="donut-label"
-              :style="getDonutLabelPosition(index)"
+              :style="getLightLabelPosition(index)"
           >
             <span class="label-text">{{ segment.label }}</span>
             <span class="label-value">{{ segment.threshold }}</span>
           </div>
         </div>
       </div>
-      <div class="info">有效日照时数：--小时</div>
+      <div class="info">有效日照时数：{{ validLight }}小时</div>
     </div>
 
     <div class="section">
@@ -48,10 +50,10 @@
         <!-- 添加 Donut Labels -->
         <div class="donut-labels">
           <div
-              v-for="(segment, index) in averageSoilMoisture.segments"
+              v-for="(segment, index) in tempLabel.segments"
               :key="index"
               class="donut-label"
-              :style="getDonutLabelPosition(index)"
+              :style="getTempLabelPosition(index)"
           >
             <span class="label-text">{{ segment.label }}</span>
             <span class="label-value">{{ segment.threshold }}</span>
@@ -80,16 +82,26 @@ export default {
   data() {
     return {
       selectedArea: '实验地(休耕/休眠期)',
-      lightValue: 45000,
+      lightValue: 450,
       tempValue: 28,
+      validLight: '--',
       // 添加 Donut Labels 数据
-      averageSoilMoisture: {
+      lightLabel: {
         value: 37.5,
         segments: [
-          { label: '萎蔫点', threshold: '10%', color: '#D3605C', percentage: 12, angleOffset: 135 }, // Reddish - approx visual size
-          { label: '灌溉下限', threshold: '15%', color: '#E8A43F', percentage: 18, angleOffset: 180 }, // Yellowish
-          { label: '灌溉上限', threshold: '25%', color: '#5DA5DA', percentage: 35, angleOffset: 245 }, // Blueish
-          { label: '饱和持水量', threshold: '30%', color: '#8B5FBF', percentage: 35, angleOffset: 30 }  // Purplish
+          { label: '光补偿点', threshold: '10000Lux', color: '#D3605C', percentage: 12, angleOffset: 135 }, // Reddish - approx visual size
+          { label: '高', threshold: '100000Lux', color: '#E8A43F', percentage: 18, angleOffset: 180 }, // Yellowish
+          { label: '偏低', threshold: '20000Lux', color: '#5DA5DA', percentage: 35, angleOffset: 245 }, // Blueish
+          { label: '光饱和点', threshold: '90000Lux', color: '#8B5FBF', percentage: 35, angleOffset: 30 }  // Purplish
+        ]
+      },
+      tempLabel: {
+        value: 37.5,
+        segments: [
+          { label: '光补偿点', threshold: '10000Lux', color: '#D3605C', percentage: 12, angleOffset: 135 }, // Reddish - approx visual size
+          { label: '高', threshold: '100000Lux', color: '#E8A43F', percentage: 18, angleOffset: 180 }, // Yellowish
+          { label: '偏低', threshold: '20000Lux', color: '#5DA5DA', percentage: 35, angleOffset: 245 }, // Blueish
+          { label: '光饱和点', threshold: '90000Lux', color: '#8B5FBF', percentage: 35, angleOffset: 30 }  // Purplish
         ]
       }
     };
@@ -119,6 +131,12 @@ export default {
                   [0.6, '#17c2c2'],
                   [0.9, '#f1c40f'],
                   [1, '#e74c3c'],
+                  // 按照原样式均匀分布比例数
+                  // [0.13, '#643dbb'],
+                  // [0.3, '#1476b8'],
+                  // [0.715, '#17c2c2'],
+                  // [0.87, '#f1c40f'],
+                  // [1, '#e74c3c'],
                 ],
               },
             },
@@ -196,8 +214,8 @@ export default {
       });
     },
     // 添加 Donut Labels 的位置计算方法
-    getDonutLabelPosition(index) {
-      const segment = this.averageSoilMoisture.segments[index];
+    getLightLabelPosition(index) {
+      const segment = this.lightLabel.segments[index];
       const angleRad = (segment.angleOffset - 90) * (Math.PI / 180); // Angle for positioning
       const radius = 100; // Outer radius for labels in pixels
 
@@ -206,13 +224,31 @@ export default {
       // Using percentages for top/left relative to the container.
       // These are hand-tuned values based on the image.
       const positions = [
-        { top: '70%', left: '15%', textAlign: 'right'},   // 萎蔫点 (bottom-left)
-        { top: '90%', left: '80%', textAlign: 'right'},  // 灌溉下限 (left)
-        { top: '0%', left: '20%', textAlign: 'left'},   // 灌溉上限 (top-leftish)
-        { top: '35%', left: '85%', textAlign: 'left'}    // 饱和持水量 (right)
+        { top: '60%', left: '26%', textAlign: 'center'},   // 光补偿点
+        { top: '55%', right: '10%', textAlign: 'center'},  // 高
+        { top: '32%', left: '28%', textAlign: 'center'},   // 偏低
+        { top: '6%', left: '59%', textAlign: 'center'}    // 光饱和点
       ];
       return positions[index];
-    }
+    },
+    // 添加 Donut Labels 的位置计算方法
+    getTempLabelPosition(index) {
+      const segment = this.lightLabel.segments[index];
+      const angleRad = (segment.angleOffset - 90) * (Math.PI / 180); // Angle for positioning
+      const radius = 100; // Outer radius for labels in pixels
+
+      // These are offsets from the center of the donut chart area.
+      // The label box itself has dimensions, so these might need adjustment.
+      // Using percentages for top/left relative to the container.
+      // These are hand-tuned values based on the image.
+      const positions = [
+        { top: '60%', left: '26%', textAlign: 'center'},   // 光补偿点
+        { top: '55%', right: '10%', textAlign: 'center'},  // 高
+        { top: '32%', left: '28%', textAlign: 'center'},   // 偏低
+        { top: '6%', left: '59%', textAlign: 'center'}    // 光饱和点
+      ];
+      return positions[index];
+    },
   }
 };
 </script>
@@ -230,14 +266,27 @@ export default {
   position: fixed; /* 或者使用 absolute */
   left: 5vw;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000; /* 确保它位于其他内容之上 */
+  z-index: 1001; /* 确保它位于其他内容之上 */
 }
+/*
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
   font-size: 1.2rem;
+}*/
+.header {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #00ffea;
+}
+
+.header-icon {
+  width: 24px;
+  margin-right: 6px;
 }
 .close-btn {
   background: none;
