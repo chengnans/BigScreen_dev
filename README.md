@@ -8,7 +8,7 @@
 每个界面内的组件的按钮及跳转组件
 接收接口数据响应
 
-食用方式<img width="48" height="48" alt="00246E6A" src="https://github.com/user-attachments/assets/46c3ede0-d375-4da5-abb4-389b6fb8f34f" />
+食用方式(oﾟ▽ﾟ)o  
 1.npm install
 2.根目录下package.json中运行dev或build
 
